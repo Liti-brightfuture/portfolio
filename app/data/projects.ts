@@ -1,0 +1,236 @@
+export type Badge = 'human' | 'ai' | 'collab'
+export type Status = 'done' | 'wip' | 'demo'
+
+export interface Project {
+  id: string
+  number: string
+  name: string
+  description: string
+  why: string
+  role?: string
+  outcome?: string
+  stackFit?: string
+  problem?: string
+  owned?: string
+  tradeoff?: string
+  tech: string[]
+  badge: Badge
+  status: Status
+  link?: string
+  github?: string
+}
+
+export interface EarlyProject {
+  name: string
+  year: string
+  description: string
+  tech: string[]
+}
+
+export const projects: Project[] = [
+  {
+    id: 'printflow',
+    number: '01',
+    name: 'Reminders',
+    description: 'CRM platform for business automation and day-to-day management: client records, reminders, operational workflows, and business visibility in one place.',
+    why: '[YOUR TEXT HERE - de ce l-ai facut]',
+    role: 'Full-stack builder',
+    outcome: 'Reduces admin overhead and centralizes core business operations.',
+    stackFit: 'Chosen for fast iteration on CRM flows, reminders, and operational tooling.',
+    problem: 'Small businesses lose time when client management, reminders, and internal workflows live across disconnected tools.',
+    owned: 'Product structure, CRM flows, backend logic, reminders, and operational reporting decisions.',
+    tradeoff: 'Optimized for fast delivery and real operational clarity over overbuilt architecture.',
+    tech: ['React 19', 'Node.js', 'Supabase', 'Prisma', 'Twilio', 'Framer Motion'],
+    badge: 'collab',
+    status: 'wip',
+    link: 'https://reminders.ro',
+  },
+  {
+    id: 'solana-scout',
+    number: '02',
+    name: 'Solana Scout',
+    description: 'Scores new Solana tokens 0-100 by analyzing smart contracts, holder distribution, and wallet graphs to spot suspicious patterns.',
+    why: '[YOUR TEXT HERE]',
+    role: 'AI + data systems',
+    outcome: 'Makes noisy token launches faster to triage.',
+    stackFit: 'Python async and graph tooling fit high-volume analysis best.',
+    problem: 'New tokens launch fast, and manual due diligence is too slow to catch obvious risks early.',
+    owned: 'Scoring logic, heuristics, pipeline design, and the terminal analyst experience.',
+    tradeoff: 'Preferred explainable heuristics over opaque complexity for faster iteration.',
+    tech: ['Python async', 'NetworkX', 'SQLite', 'WebSocket', 'Rich TUI'],
+    badge: 'ai',
+    status: 'done',
+  },
+  {
+    id: 'fleetops',
+    number: '03',
+    name: 'Fleet Hub',
+    description: "Transport management for drivers and fleet managers. Drivers log daily reports and photos; managers track vehicles and export data. Row-level security isolates each company's records.",
+    why: '[YOUR TEXT HERE]',
+    role: 'Full-stack collaborator',
+    outcome: 'Gives fleets one place for reports, photos, and exports.',
+    stackFit: 'Supabase fit multi-tenant access control and shipping speed.',
+    problem: 'Fleet teams were handling daily operations through scattered messages, photos, and spreadsheets.',
+    owned: 'Core product flows, data model choices, exports, and access boundaries.',
+    tradeoff: 'Used pragmatic platform features instead of custom infrastructure to keep delivery tight.',
+    tech: ['React', 'Supabase', 'ExcelJS', 'i18n', 'Vercel'],
+    badge: 'collab',
+    status: 'wip',
+    link: 'https://fleethub.uk',
+  },
+  {
+    id: 'pawbook',
+    number: '04',
+    name: 'PawBook',
+    description: 'Grooming salon management: bookings, automated reminders, no-show tracking, client and pet profiles, and reports. 11 modules in TypeScript.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Product-minded full-stack',
+    outcome: 'Helps salons reduce no-shows and organize repeat clients.',
+    stackFit: 'TypeScript and Supabase kept the app maintainable across many modules.',
+    problem: 'Small salons need reminders, booking context, and client history without enterprise software overhead.',
+    owned: 'Module planning, booking flows, reminder logic, and dashboard structure.',
+    tradeoff: 'Favored straightforward workflows staff can learn quickly over dense feature layering.',
+    tech: ['React', 'TypeScript', 'Supabase', 'Tailwind v4', 'React Router v7'],
+    badge: 'collab',
+    status: 'wip',
+    link: 'https://paw-book.vercel.app/',
+  },
+  {
+    id: 'marketedge',
+    number: '05',
+    name: 'MarketEdge',
+    description: 'Trading bot for Polymarket. Detects arbitrage opportunities, flags Z-score anomalies, backtests strategies, and sends Telegram alerts.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Automation builder',
+    outcome: 'Turns market noise into actionable alerts and tests.',
+    stackFit: 'Python fit data processing, experimentation, and alerting loops.',
+    problem: 'Prediction markets move quickly, and patterns disappear if research stays manual.',
+    owned: 'Signal design, anomaly logic, backtesting pipeline, and Telegram delivery.',
+    tradeoff: 'Kept the system lightweight and monitorable rather than overengineering execution.',
+    tech: ['Python', 'Telegram API', 'openpyxl', 'ProcessPoolExecutor'],
+    badge: 'ai',
+    status: 'done',
+  },
+  {
+    id: 'siteops',
+    number: '06',
+    name: 'SiteOps',
+    description: 'Construction site management for managers and field workers: equipment and materials allocation, fuel tracking, daily reports, and certification records.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Operations-focused builder',
+    outcome: 'Brings field reporting and resource tracking into one workflow.',
+    stackFit: 'Type-safe forms and Supabase matched operational data entry well.',
+    problem: 'Site teams need reliable daily reporting without adding friction for people in the field.',
+    owned: 'Feature shaping, workflow structure, validation, and reporting surfaces.',
+    tradeoff: 'Prioritized robust day-to-day usage over flashy UI patterns.',
+    tech: ['React', 'TypeScript', 'Supabase', 'Framer Motion', 'Zod'],
+    badge: 'collab',
+    status: 'wip',
+  },
+  {
+    id: 'clipforge',
+    number: '07',
+    name: 'ClipForge',
+    description: 'Telegram-triggered video pipeline. One command -> GPT script -> TTS voice -> Pexels footage -> ffmpeg assembly -> synced captions -> ready to post.',
+    why: '[YOUR TEXT HERE]',
+    role: 'AI workflow builder',
+    outcome: 'Compresses content production from hours to a single command.',
+    stackFit: 'Async Python fit chained AI, media, and ffmpeg jobs.',
+    problem: 'Short-form content creation is repetitive and slow when every step is manual.',
+    owned: 'End-to-end orchestration, prompt flow, media assembly, and failure handling.',
+    tradeoff: 'Accepted imperfect first-pass output in exchange for major time savings.',
+    tech: ['Python async', 'OpenAI', 'ffmpeg', 'Whisper', 'pytest'],
+    badge: 'ai',
+    status: 'done',
+  },
+  {
+    id: 'docalert',
+    number: '08',
+    name: 'DocAlert',
+    description: 'Mobile app for iOS, Android, and web that sends push notifications before documents expire. Supports multiple languages and document types.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Cross-platform full-stack',
+    outcome: 'Helps users avoid missed document deadlines.',
+    stackFit: 'Expo and Supabase fit one codebase across mobile and web.',
+    problem: 'People forget renewals until they become urgent, especially across multiple document types.',
+    owned: 'Product flow, reminder logic, localization structure, and app-wide state decisions.',
+    tradeoff: 'Chose broad platform coverage over native-only optimization.',
+    tech: ['React Native', 'Expo', 'Supabase', 'Zustand', 'NativeWind'],
+    badge: 'collab',
+    status: 'wip',
+  },
+  {
+    id: 'stockmind',
+    number: '09',
+    name: 'StockMind',
+    description: 'Seven agents analyze a stock ticker from separate angles: fundamentals, sentiment, news, technicals, bull case, bear case. Each votes BUY, HOLD, or SELL.',
+    why: '[YOUR TEXT HERE]',
+    role: 'AI experimenter',
+    outcome: 'Shows structured multi-angle stock analysis in one pass.',
+    stackFit: 'Vanilla JS kept the demo fast to prototype and easy to share.',
+    problem: 'Single-perspective analysis misses context when evaluating a stock decision.',
+    owned: 'Agent framing, decision orchestration, and front-end presentation.',
+    tradeoff: 'Built for clarity of concept over production-grade infrastructure.',
+    tech: ['Vanilla JS', 'HTML/CSS', 'GitHub Pages'],
+    badge: 'ai',
+    status: 'demo',
+  },
+  {
+    id: 'embedbot',
+    number: '10',
+    name: 'EmbedBot',
+    description: "Chatbot widget for any website. Drop in a script tag with a company ID and it loads a GPT-4o-mini assistant configured with that company's instructions.",
+    why: '[YOUR TEXT HERE]',
+    role: 'Embed product builder',
+    outcome: 'Lets teams add a branded assistant with minimal setup.',
+    stackFit: 'Next.js fit embedding, routing, and lightweight configuration management.',
+    problem: 'Most site chat assistants are too heavy to integrate for smaller teams.',
+    owned: 'Widget architecture, tenant configuration model, and delivery flow.',
+    tradeoff: 'Kept installation extremely simple instead of exposing endless customization.',
+    tech: ['Next.js 14', 'App Router', 'OpenAI', 'sessionStorage'],
+    badge: 'collab',
+    status: 'done',
+  },
+  {
+    id: 'leaguelens',
+    number: '11',
+    name: 'LeagueLens',
+    description: 'Pulls Premier League match data from FBRef and analyzes BTTS rates, over/under patterns, and exact score frequencies.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Data scraper + analyst',
+    outcome: 'Turns raw match data into betting-friendly patterns.',
+    stackFit: 'Python data tooling fit scraping and analysis loops naturally.',
+    problem: 'Useful football patterns are buried in repetitive manual stat checking.',
+    owned: 'Data extraction, cleaning, metric selection, and output interpretation.',
+    tradeoff: 'Focused on a narrow, useful workflow rather than a broad sports platform.',
+    tech: ['Python', 'undetected-chromedriver', 'pandas', 'BeautifulSoup4'],
+    badge: 'ai',
+    status: 'done',
+  },
+  {
+    id: 'quickshop',
+    number: '12',
+    name: 'ECI Marketplace',
+    description: 'E-commerce MVP with product catalog, cart, and checkout. Order notifications via EmailJS, no backend required.',
+    why: '[YOUR TEXT HERE]',
+    role: 'Frontend + product delivery',
+    outcome: 'Ships a working store quickly without backend complexity.',
+    stackFit: 'Frontend-only tools kept the MVP lean and easy to deploy.',
+    problem: 'A simple marketplace often needs validation fast, before backend investment makes sense.',
+    owned: 'Storefront UX, cart flow, checkout logic, and notification setup.',
+    tradeoff: 'Optimized for launch speed and simplicity over extensibility.',
+    tech: ['React', 'Context API', 'EmailJS', 'CSS Modules'],
+    badge: 'collab',
+    status: 'done',
+    link: 'https://eci-marketplace.vercel.app/',
+  },
+]
+
+export const earlyProjects: EarlyProject[] = [
+  { name: 'Snake Game', year: '2020', description: 'Classic snake built in C++ for high school informatics exam.', tech: ['C++'] },
+  { name: 'Crossy Roads Clone', year: '2020', description: 'Arcade game clone with collision detection and level progression.', tech: ['C++'] },
+  { name: 'Pong Game', year: '2021', description: 'Two-player pong with score tracking.', tech: ['C++'] },
+  { name: 'Currency Converter', year: '2021', description: 'Live exchange rates via API, clean UI for quick conversions.', tech: ['HTML', 'CSS', 'JS', 'API'] },
+  { name: 'Weather App', year: '2022', description: 'Weather site with animated backgrounds that change per condition.', tech: ['HTML', 'CSS', 'JS'] },
+  { name: 'Math Reference Site', year: '2022', description: 'Reference site with solved problems and formulas per chapter.', tech: ['HTML', 'CSS', 'JS'] },
+]

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 120%;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.6), transparent 38%),
+    #fafaf8;
+  color: #1a1a18;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(26, 26, 24, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 26, 24, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(26, 26, 24, 0.02), transparent 34%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 38%),
+      #111110;
+    color: #e8e8e4;
+  }
+
+  body::before {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.028), transparent 34%);
+    opacity: 0.25;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.badge-human {
+  background: #eaf3de;
+  color: #3b6d11;
+  border: 0.5px solid #639922;
+}
+
+.badge-ai {
+  background: #eeedfe;
+  color: #534ab7;
+  border: 0.5px solid #7f77dd;
+}
+
+.badge-collab {
+  background: #e6f1fb;
+  color: #185fa5;
+  border: 0.5px solid #378add;
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-human { background: #27500a; color: #c0dd97; border-color: #639922; }
+  .badge-ai { background: #3c3489; color: #cecbf6; border-color: #7f77dd; }
+  .badge-collab { background: #0c447c; color: #b5d4f4; border-color: #378add; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
