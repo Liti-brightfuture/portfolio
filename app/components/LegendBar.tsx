@@ -6,7 +6,7 @@ export default function LegendBar() {
   const { t } = useLang()
 
   return (
-    <div className="border-b border-black/10 dark:border-white/10">
+    <div suppressHydrationWarning className="border-b border-black/10 dark:border-white/10">
       <div className="max-w-5xl mx-auto px-6 py-3 flex flex-wrap gap-5 items-center">
         <span className="text-[11px] text-neutral-500">{t.legend.label}</span>
         <div className="flex flex-wrap gap-4">

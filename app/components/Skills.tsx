@@ -34,7 +34,7 @@ export default function Skills() {
   const { t } = useLang()
 
   return (
-    <section id="skills" className="border-b border-black/10 dark:border-white/10">
+    <section suppressHydrationWarning id="skills" className="border-b border-black/10 dark:border-white/10">
       <motion.div
         className="max-w-5xl mx-auto px-6 py-16"
         initial={{ opacity: 0, y: 24 }}

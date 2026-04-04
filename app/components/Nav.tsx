@@ -100,7 +100,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-black/10 bg-[#fafaf8]/92 backdrop-blur-md dark:border-white/10 dark:bg-[#111110]/92">
+    <nav suppressHydrationWarning className="sticky top-0 z-50 border-b border-black/10 bg-[#fafaf8]/92 backdrop-blur-md dark:border-white/10 dark:bg-[#111110]/92">
       <div className="relative max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <div className="flex items-center justify-start">
           <button

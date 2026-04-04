@@ -11,7 +11,7 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="border-b border-black/10 dark:border-white/10">
+      <section suppressHydrationWarning id="projects" className="border-b border-black/10 dark:border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-16">
           <p className="text-[11px] tracking-[0.12em] uppercase text-neutral-500 mb-10">
             {t.projects.label}
@@ -33,7 +33,7 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 dark:border-white/10">
+      <section suppressHydrationWarning className="border-b border-black/10 dark:border-white/10">
         <motion.div
           className="max-w-5xl mx-auto px-6 py-16"
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}

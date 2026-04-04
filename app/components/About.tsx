@@ -37,7 +37,7 @@ export default function About() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section id="about" className="border-b border-black/10 dark:border-white/10">
+    <section suppressHydrationWarning id="about" className="border-b border-black/10 dark:border-white/10">
       <motion.div
         className="max-w-5xl mx-auto px-6 py-14"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}

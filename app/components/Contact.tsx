@@ -8,7 +8,7 @@ export default function Contact() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section id="contact" className="border-b border-black/10 dark:border-white/10">
+    <section suppressHydrationWarning id="contact" className="border-b border-black/10 dark:border-white/10">
       <motion.div
         className="max-w-5xl mx-auto px-6 py-16"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
