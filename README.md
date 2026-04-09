@@ -4,7 +4,7 @@
 
 **Bucharest, Romania · Open to full-time & remote**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-1a1a18?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-liti-brightfutures-projects.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-1a1a18?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-kappa-five-5poi223gfd.vercel.app)
 [![Email](https://img.shields.io/badge/Email-534AB7?style=for-the-badge&logo=gmail&logoColor=white)](mailto:litescudud@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/david-litescu-a53371213)
 
