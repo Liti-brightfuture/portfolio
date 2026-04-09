@@ -12,7 +12,7 @@ const statusColors: Record<string, string> = {
   demo: 'bg-blue-500',
 }
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, className = '' }: { project: Project; className?: string }) {
   const { t } = useLang()
   const [open, setOpen] = useState(false)
   const reduceMotion = useReducedMotion()
@@ -49,9 +49,9 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <motion.article
-      className={`group rounded-2xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900/40 ${
+      className={`group flex flex-col rounded-2xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900/40 ${
         hasExpandedContent ? 'cursor-pointer' : ''
-      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20`}
+      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 ${className}`}
       onClick={toggleCard}
       onKeyDown={onKeyDown}
       tabIndex={hasExpandedContent ? 0 : -1}
@@ -124,16 +124,20 @@ export default function ProjectCard({ project }: { project: Project }) {
         )}
       </AnimatePresence>
 
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="flex flex-wrap gap-1">
+      <div className="mt-auto pt-3 border-t border-black/8 dark:border-white/8">
+        <div className="flex flex-wrap gap-1 mb-3">
           {project.tech.map(tag => (
             <span key={tag} className="text-[10px] px-2 py-0.5 border border-black/15 dark:border-white/15 rounded-full text-neutral-500">
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          {project.link && (
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-[11px] text-neutral-500">
+            <span className={`w-1.5 h-1.5 rounded-full ${statusColors[project.status]}`} />
+            {statusLabel}
+          </span>
+          {project.link ? (
             <a
               href={project.link}
               target="_blank"
@@ -143,11 +147,9 @@ export default function ProjectCard({ project }: { project: Project }) {
             >
               {t.projects.liveDemo} &rarr;
             </a>
+          ) : (
+            <span />
           )}
-          <span className="flex items-center gap-1 text-[11px] text-neutral-500">
-            <span className={`w-1.5 h-1.5 rounded-full ${statusColors[project.status]}`} />
-            {statusLabel}
-          </span>
         </div>
       </div>
     </motion.article>

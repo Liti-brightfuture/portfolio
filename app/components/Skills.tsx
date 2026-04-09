@@ -6,19 +6,19 @@ import { useLang } from '@/app/context/LangContext'
 const skillGroups = [
   {
     cat: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js', 'Vite', 'Tailwind CSS', 'React Native', 'Framer Motion', 'Radix UI'],
+    items: ['React', 'TypeScript', 'Next.js', 'Vite', 'Tailwind CSS', 'React Native', 'Framer Motion', 'Radix UI', 'Zustand', 'Recharts'],
   },
   {
     cat: 'Backend & Data',
-    items: ['Node.js', 'Express', 'Supabase', 'Prisma', 'PostgreSQL', 'SQLite', 'Edge Functions', 'RLS'],
+    items: ['Node.js', 'Express', 'Supabase', 'Prisma', 'PostgreSQL', 'Neon Postgres', 'Upstash Redis', 'SQLite', 'Edge Functions', 'RLS'],
   },
   {
     cat: 'Integrations & APIs',
-    items: ['Twilio', 'SendGrid', 'Resend', 'OpenAI API', 'Telegram Bot API', 'EmailJS', 'Pexels API'],
+    items: ['Twilio', 'SendGrid', 'Resend', 'OpenAI API', 'Telegram Bot API', 'EmailJS', 'Pexels API', 'Solana Wallet Adapter'],
   },
   {
     cat: 'Tooling & DevOps',
-    items: ['GitHub', 'Vercel', 'Claude Code', 'ffmpeg', 'Expo', 'Zod', 'React Hook Form'],
+    items: ['GitHub', 'Vercel', 'Claude Code', 'ffmpeg', 'Expo', 'Zod', 'React Hook Form', 'Vitest'],
   },
   {
     cat: 'AI & Prompt Engineering',

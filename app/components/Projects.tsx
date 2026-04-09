@@ -16,17 +16,17 @@ export default function Projects() {
           <p className="text-[11px] tracking-[0.12em] uppercase text-neutral-500 mb-10">
             {t.projects.label}
           </p>
-          <div className="grid items-start md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {projects.map((p, i) => (
               <motion.div
                 key={p.id}
-                className="self-start"
+                className="flex"
                 initial={reduceMotion ? false : { opacity: 0, y: 16 }}
                 whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.36, ease: 'easeOut', delay: reduceMotion ? 0 : i * 0.05 }}
               >
-                <ProjectCard project={p} />
+                <ProjectCard project={p} className="w-full" />
               </motion.div>
             ))}
           </div>
