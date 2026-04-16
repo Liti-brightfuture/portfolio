@@ -43,7 +43,7 @@ export const projects: Project[] = [
     tech: ['React 19', 'Node.js', 'Supabase', 'Prisma', 'Twilio', 'Framer Motion'],
     badge: 'collab',
     status: 'wip',
-    link: 'https://reminders.ro',
+    link: 'https://www.reminders.ro',
   },
   {
     id: 'solana-scout',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     tech: ['React', 'Supabase', 'ExcelJS', 'i18n', 'Vercel'],
     badge: 'collab',
     status: 'wip',
-    link: 'https://fleethub.uk',
+    link: 'https://www.fleethub.uk',
   },
   {
     id: 'scout-dashboard',
