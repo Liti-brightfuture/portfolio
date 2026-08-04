@@ -6,7 +6,7 @@ import { useLang } from '@/app/context/LangContext'
 
 const stats = [
   { num: 7, key: 'years' as const },
-  { num: 13, key: 'projects' as const },
+  { num: 17, key: 'projects' as const },
   { num: 2, key: 'ai' as const },
   { num: 3, key: 'languages' as const },
 ]
@@ -38,7 +38,7 @@ export default function About() {
 
   return (
     <section suppressHydrationWarning id="about" className="border-b border-black/10 dark:border-white/10">
-      <motion.div
+      <motion.div suppressHydrationWarning
         className="max-w-5xl mx-auto px-6 py-14"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -48,23 +48,23 @@ export default function About() {
         <p className="text-[11px] tracking-[0.12em] uppercase text-neutral-500 mb-10">
           {t.about.label}
         </p>
-        <div className="grid md:grid-cols-[minmax(0,1fr)_240px] gap-10 items-start">
-          <div className="space-y-4 text-[15px] text-neutral-600 dark:text-neutral-400 leading-[1.8] font-light">
+        <div suppressHydrationWarning className="grid md:grid-cols-[minmax(0,1fr)_240px] gap-10 items-start">
+          <div suppressHydrationWarning className="space-y-4 text-[15px] text-neutral-600 dark:text-neutral-400 leading-[1.8] font-light">
             <p>{t.about.p1}</p>
             <p>{t.about.p2}</p>
             <p>{t.about.p3}</p>
           </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-20 h-20 rounded-full border border-black/15 dark:border-white/15 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center font-serif text-2xl text-neutral-600">
+          <div suppressHydrationWarning className="flex flex-col items-center gap-4">
+            <div suppressHydrationWarning className="w-20 h-20 rounded-full border border-black/15 dark:border-white/15 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center font-serif text-2xl text-neutral-600">
               DL
             </div>
-            <div className="grid grid-cols-2 gap-2 w-full">
+            <div suppressHydrationWarning className="grid grid-cols-2 gap-2 w-full">
               {stats.map(s => (
-                <div key={s.key} className="bg-neutral-100 dark:bg-neutral-800/60 rounded-lg p-3 text-center">
-                  <div className="text-[22px] font-medium">
+                <div suppressHydrationWarning key={s.key} className="bg-neutral-100 dark:bg-neutral-800/60 rounded-lg p-3 text-center">
+                  <div suppressHydrationWarning className="text-[22px] font-medium">
                     <Counter value={s.num} />
                   </div>
-                  <div className="text-[11px] text-neutral-500 mt-0.5">{t.about[s.key]}</div>
+                  <div suppressHydrationWarning className="text-[11px] text-neutral-500 mt-0.5">{t.about[s.key]}</div>
                 </div>
               ))}
             </div>

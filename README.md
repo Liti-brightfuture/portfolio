@@ -44,7 +44,7 @@ I use AI to move faster. The actual work is knowing what to build, how to struct
 ## Projects
 
 <details>
-<summary><strong>13 shipped apps — click to expand</strong></summary>
+<summary><strong>17 shipped apps — click to expand</strong></summary>
 
 <br>
 
@@ -58,11 +58,15 @@ I use AI to move faster. The actual work is knowing what to build, how to struct
 | 06 | **MarketEdge** | Trading bot for Polymarket: arbitrage detection, Z-score signals, Telegram alerts | Python, Telegram API | ✅ Done |
 | 07 | **SiteOps** | Construction site management: equipment, fuel tracking, daily reports, certifications | React, TypeScript, Supabase, Zod | 🔨 In progress |
 | 08 | **ClipForge** | Telegram → GPT script → TTS → Pexels footage → ffmpeg → synced captions | Python async, OpenAI, Whisper | ✅ Done |
-| 09 | **DocAlert** | Mobile app that alerts before documents expire. iOS, Android, and web | React Native, Expo, Supabase | 🔨 In progress |
+| 09 | **DocAlert** | Mobile app that tracks certifications and personal documents, with push reminders, file attachments, and change history. iOS, Android, and web | React Native, Expo, Supabase, i18next | 🔨 In progress |
 | 10 | **StockMind** | Seven agents analyze a stock from separate angles, each votes BUY/HOLD/SELL | Vanilla JS, HTML/CSS | 🔬 Demo |
 | 11 | **EmbedBot** | Chatbot widget — one script tag loads a GPT-4o-mini assistant for any site | Next.js 14, OpenAI | ✅ Done |
 | 12 | **LeagueLens** | Pulls Premier League data from FBRef, analyzes BTTS rates and score frequencies | Python, pandas, BeautifulSoup4 | ✅ Done |
 | 13 | **ECI Marketplace** | E-commerce MVP: catalog, cart, checkout, EmailJS notifications | React, Context API, EmailJS | ✅ Done |
+| 14 | **InvoiceExtractor** | Extracts data from Romanian supplier invoices via OpenAI Structured Outputs, validates CUI against ANAF, exports to Saga/SmartBill/WinMENTOR | Next.js 16, TypeScript, Supabase, OpenAI | 🔨 In progress |
+| 15 | **EnergyTrading** | Solar production forecasting and day-ahead bid optimization for the Romanian electricity market, backtested on real ENTSO-E prices | Python, LightGBM, pvlib, scikit-learn | 🔨 In progress |
+| 16 | **LIT Bytes** | VS Code extension: rotates tech news in the status bar while Claude Code runs, signals when a session goes idle | TypeScript, VS Code Extension API, Cloudflare Workers | 🔨 In progress |
+| 17 | **ChainMerchants** | Crypto payments platform for Romanian e-commerce: CoinGate checkout, EUR/RON payouts, merchant dashboard | TypeScript, Fastify, Supabase, React, Astro | 🔬 Demo |
 
 </details>
 

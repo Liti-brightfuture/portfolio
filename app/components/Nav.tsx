@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useLang } from '@/app/context/LangContext'
-
-const sections = ['about', 'build', 'projects', 'skills', 'contact'] as const
+import { sections, SectionId } from '@/app/data/nav'
+import MobileMenu from './MobileMenu'
 
 export default function Nav() {
   const { t, lang, toggle } = useLang()
-  const [active, setActive] = useState<(typeof sections)[number] | null>(null)
+  const [active, setActive] = useState<SectionId | null>(null)
   const reduceMotion = useReducedMotion()
-  const manualTargetRef = useRef<(typeof sections)[number] | null>(null)
+  const manualTargetRef = useRef<SectionId | null>(null)
   const manualTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Nav() {
       }
 
       const marker = window.innerHeight * 0.28
-      let current: (typeof sections)[number] | null = null
+      let current: SectionId | null = null
 
       for (const id of sections) {
         const element = document.getElementById(id)
@@ -61,7 +61,7 @@ export default function Nav() {
     }
   }, [])
 
-  const scrollTo = (id: (typeof sections)[number]) => {
+  const scrollTo = (id: SectionId) => {
     const element = document.getElementById(id)
     if (!element) return
 
@@ -101,8 +101,8 @@ export default function Nav() {
 
   return (
     <nav suppressHydrationWarning className="sticky top-0 z-50 border-b border-black/10 bg-[#fafaf8]/92 backdrop-blur-md dark:border-white/10 dark:bg-[#111110]/92">
-      <div className="relative max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center justify-start">
+      <div suppressHydrationWarning className="relative max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+        <div suppressHydrationWarning className="flex items-center justify-start">
           <button
             onClick={scrollToTop}
             className={`relative inline-flex items-center justify-center rounded-full px-3 py-2 font-serif text-lg tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 ${
@@ -113,7 +113,7 @@ export default function Nav() {
             aria-label="Scroll to top"
           >
             {active === null && (
-              <motion.span
+              <motion.span suppressHydrationWarning
                 layoutId="nav-active-home"
                 transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
                 className="absolute inset-0 rounded-full bg-black/[0.045] ring-1 ring-black/10 dark:bg-white/[0.07] dark:ring-white/10"
@@ -123,13 +123,13 @@ export default function Nav() {
           </button>
         </div>
 
-        <div className="hidden md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:flex md:items-center md:justify-center">
-          <ul className="flex flex-wrap items-center justify-center gap-2 text-[13px] text-neutral-500 dark:text-neutral-400">
+        <div suppressHydrationWarning className="hidden md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:flex md:items-center md:justify-center">
+          <ul suppressHydrationWarning className="flex flex-wrap items-center justify-center gap-2 text-[13px] text-neutral-500 dark:text-neutral-400">
             {sections.map((key) => {
               const isActive = active === key
 
               return (
-                <li key={key}>
+                <li suppressHydrationWarning key={key}>
                   <button
                     onClick={() => scrollTo(key)}
                     className={`relative rounded-full px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 ${
@@ -137,7 +137,7 @@ export default function Nav() {
                     }`}
                   >
                     {isActive && (
-                      <motion.span
+                      <motion.span suppressHydrationWarning
                         layoutId="nav-active-pill"
                         transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
                         className="absolute inset-0 rounded-full bg-black/[0.045] dark:bg-white/[0.07]"
@@ -145,7 +145,7 @@ export default function Nav() {
                     )}
                     <span className="relative">{t.nav[key]}</span>
                     {isActive && (
-                      <motion.span
+                      <motion.span suppressHydrationWarning
                         layoutId="nav-active-line"
                         transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
                         className="absolute bottom-1 left-3 right-3 h-px bg-neutral-900 dark:bg-neutral-100"
@@ -158,13 +158,14 @@ export default function Nav() {
           </ul>
         </div>
 
-        <div className="flex items-center justify-end">
+        <div suppressHydrationWarning className="flex items-center justify-end gap-1">
           <button
             onClick={toggle}
-            className="text-[12px] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20"
+            className="hidden text-[12px] px-3 py-1 border border-black/20 dark:border-white/20 rounded-full text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 md:inline-flex"
           >
             {lang === 'en' ? 'RO' : 'EN'}
           </button>
+          <MobileMenu sections={sections} active={active} onNavigate={scrollTo} />
         </div>
       </div>
     </nav>

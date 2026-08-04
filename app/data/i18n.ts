@@ -6,6 +6,9 @@ export const translations = {
       projects: 'Projects',
       skills: 'Skills',
       contact: 'Contact',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      menuLabel: 'Menu',
     },
     hero: {
       label: 'Software Developer · Bucharest, Romania',
@@ -27,7 +30,7 @@ export const translations = {
     about: {
       label: 'About',
       p1: 'I study Robotics at Politehnica Bucharest and work as a Junior Developer at TechWise Electronics, where I program industrial robots in C++, Python, and C#.',
-      p2: "Outside work I've shipped twelve SaaS apps: print shop management, grooming salon booking, transport fleet tracking, prediction market bots, and automated video pipelines.",
+      p2: "Outside work I've shipped seventeen SaaS apps: business automation, grooming salon booking, transport fleet tracking, prediction market bots, invoice extraction, and crypto payment tooling.",
       p3: 'I use AI like any other tool. The actual work is knowing what to build, how to structure it, and writing prompts that produce real code.',
       note: 'I care a lot about useful software: tools people return to because they save time, reduce friction, and feel stable under daily use.',
       years: 'years coding',
@@ -87,7 +90,6 @@ export const translations = {
     },
     footer: {
       built: 'Built by David Litescu.',
-      collab: 'Built with Claude.',
     },
   },
   ro: {
@@ -97,6 +99,9 @@ export const translations = {
       projects: 'Proiecte',
       skills: 'Abilitati',
       contact: 'Contact',
+      menuOpen: 'Deschide meniul',
+      menuClose: 'Inchide meniul',
+      menuLabel: 'Meniu',
     },
     hero: {
       label: 'Dezvoltator software · Bucuresti, Romania',
@@ -118,7 +123,7 @@ export const translations = {
     about: {
       label: 'Despre mine',
       p1: 'Studiez Robotica la Politehnica Bucuresti si lucrez ca Junior Developer la TechWise Electronics, unde programez roboti industriali in C++, Python si C#.',
-      p2: 'In paralel am livrat doisprezece aplicatii SaaS: management print shop, rezervari salon grooming, urmarire flota transport, boti pentru piete de predictie si pipeline-uri video automatizate.',
+      p2: 'In paralel am livrat saptesprezece aplicatii SaaS: automatizare business, rezervari salon grooming, urmarire flota transport, boti pentru piete de predictie, extractie facturi si integrari de plati crypto.',
       p3: 'Folosesc AI ca pe orice alta unealta. Diferenta reala sta in ce alegi sa construiesti, cum structurezi solutia si cat de bine transformi ideea in produs util.',
       note: 'Imi plac produsele la care oamenii revin fiindca le economisesc timp, reduc frictiunea si raman stabile in folosirea de zi cu zi.',
       years: 'ani de programare',
@@ -178,7 +183,6 @@ export const translations = {
     },
     footer: {
       built: 'Construit de David Litescu.',
-      collab: 'Realizat cu ajutorul lui Claude.',
     },
   },
 }

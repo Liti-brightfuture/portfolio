@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useLang } from '@/app/context/LangContext'
 
 const skillGroups = [
@@ -32,27 +32,28 @@ const skillGroups = [
 
 export default function Skills() {
   const { t } = useLang()
+  const reduceMotion = useReducedMotion()
 
   return (
     <section suppressHydrationWarning id="skills" className="border-b border-black/10 dark:border-white/10">
-      <motion.div
+      <motion.div suppressHydrationWarning
         className="max-w-5xl mx-auto px-6 py-16"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <p className="text-[11px] tracking-[0.12em] uppercase text-neutral-500 mb-10">
           {t.skills.label}
         </p>
-        <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10 dark:divide-white/10 border border-black/10 dark:border-white/10 rounded-xl overflow-hidden">
+        <div suppressHydrationWarning className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/10 dark:divide-white/10 border border-black/10 dark:border-white/10 rounded-xl overflow-hidden">
           {skillGroups.map((group, i) => (
-            <div
+            <div suppressHydrationWarning
               key={group.cat}
               className={`p-5 bg-white dark:bg-neutral-900/40 ${i >= 3 ? 'border-t border-black/10 dark:border-white/10' : ''}`}
             >
               <p className="text-[11px] uppercase tracking-[0.1em] text-neutral-500 mb-3">{group.cat}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <div suppressHydrationWarning className="flex flex-wrap gap-1.5">
                 {group.items.map(item => (
                   <span
                     key={item}

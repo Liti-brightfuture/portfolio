@@ -10,12 +10,12 @@ export default function Hero() {
 
   return (
     <section suppressHydrationWarning className="border-b border-black/10 dark:border-white/10 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
-        <div className="flex items-end gap-10 md:gap-16">
+      <div suppressHydrationWarning className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+        <div suppressHydrationWarning className="flex items-end gap-10 md:gap-16">
 
           {/* Text */}
-          <div className="flex-1 min-w-0">
-            <motion.p
+          <div suppressHydrationWarning className="flex-1 min-w-0">
+            <motion.p suppressHydrationWarning
               initial={reduceMotion ? false : { opacity: 0, y: 6 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.32, ease: 'easeOut' }}
@@ -23,16 +23,16 @@ export default function Hero() {
             >
               {t.hero.label}
             </motion.p>
-            <motion.h1
+            <motion.h1 suppressHydrationWarning
               initial={reduceMotion ? false : { opacity: 0, y: 12 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.42, ease: 'easeOut', delay: reduceMotion ? 0 : 0.05 }}
               className="font-serif text-[64px] md:text-[88px] leading-[0.95] tracking-[-0.03em] mb-6"
             >
               David<br />
-              <em className="text-neutral-400 not-italic font-serif">Litescu</em>
+              <em className="text-neutral-500 dark:text-neutral-400 not-italic font-serif">Litescu</em>
             </motion.h1>
-            <motion.p
+            <motion.p suppressHydrationWarning
               initial={reduceMotion ? false : { opacity: 0, y: 8 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.34, ease: 'easeOut', delay: reduceMotion ? 0 : 0.12 }}
@@ -40,7 +40,7 @@ export default function Hero() {
             >
               {t.hero.desc}
             </motion.p>
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={reduceMotion ? undefined : { opacity: 1 }}
               transition={{ duration: 0.3, delay: reduceMotion ? 0 : 0.24 }}
@@ -60,13 +60,13 @@ export default function Hero() {
           </div>
 
           {/* Photo */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={reduceMotion ? false : { opacity: 0, x: 20 }}
             animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut', delay: reduceMotion ? 0 : 0.15 }}
             className="hidden md:block shrink-0 w-[220px] xl:w-[260px]"
           >
-            <div className="relative w-full aspect-[2/3] rounded-[6px] overflow-hidden">
+            <div suppressHydrationWarning className="relative w-full aspect-[2/3] rounded-[6px] overflow-hidden">
               <Image
                 src="/david.jpg"
                 alt="David Litescu"
