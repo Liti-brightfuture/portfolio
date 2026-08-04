@@ -30,7 +30,7 @@ export default function HowIbuild() {
 
   return (
     <section suppressHydrationWarning id="build" className="border-b border-black/10 dark:border-white/10">
-      <motion.div
+      <motion.div suppressHydrationWarning
         className="max-w-5xl mx-auto px-6 py-16"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function HowIbuild() {
           {t.build.label}
         </p>
 
-        <div className="mb-10 max-w-3xl space-y-4">
+        <div suppressHydrationWarning className="mb-10 max-w-3xl space-y-4">
           <p className="font-serif text-[34px] md:text-[42px] leading-[1.08] tracking-[-0.03em] text-neutral-900 dark:text-neutral-100">
             {t.build.intro}
           </p>
@@ -53,9 +53,9 @@ export default function HowIbuild() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div suppressHydrationWarning className="grid gap-4 md:grid-cols-3">
           {items.map((item, index) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={item.title}
               className="relative rounded-2xl border border-black/10 bg-white/80 p-5 dark:border-white/10 dark:bg-neutral-900/40"
               initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -64,8 +64,8 @@ export default function HowIbuild() {
               transition={{ duration: 0.35, ease: 'easeOut', delay: reduceMotion ? 0 : index * 0.05 }}
               whileHover={reduceMotion ? undefined : { y: -2 }}
             >
-              <div className="mb-4 flex items-center justify-between">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-400">
+              <div suppressHydrationWarning className="mb-4 flex items-center justify-between">
+                <span className="text-[10px] uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
                   {item.number}
                 </span>
                 <span className="h-px w-10 bg-black/10 dark:bg-white/10" />
@@ -78,7 +78,7 @@ export default function HowIbuild() {
                 {item.body}
               </p>
 
-              <div className="rounded-xl border border-black/8 bg-black/[0.018] px-3 py-3 dark:border-white/8 dark:bg-white/[0.03]">
+              <div suppressHydrationWarning className="rounded-xl border border-black/8 bg-black/[0.018] px-3 py-3 dark:border-white/8 dark:bg-white/[0.03]">
                 <p className="mb-1 text-[10px] uppercase tracking-[0.12em] text-neutral-500">
                   {t.build.proofLabel}
                 </p>

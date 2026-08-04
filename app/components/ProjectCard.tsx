@@ -42,13 +42,14 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
   ].filter((item): item is { label: string; value: string } => Boolean(item.value))
 
   const detailItems = [
+    { label: t.projects.why, value: project.why && !project.why.startsWith('[YOUR') ? project.why : undefined },
     { label: t.projects.problem, value: project.problem },
     { label: t.projects.owned, value: project.owned },
     { label: t.projects.tradeoff, value: project.tradeoff },
   ].filter((item): item is { label: string; value: string } => Boolean(item.value))
 
   return (
-    <motion.article
+    <motion.article suppressHydrationWarning
       className={`group flex flex-col rounded-2xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900/40 ${
         hasExpandedContent ? 'cursor-pointer' : ''
       } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 ${className}`}
@@ -61,18 +62,18 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
       animate={open && !reduceMotion ? { borderColor: 'rgba(24, 24, 19, 0.18)' } : undefined}
       transition={{ duration: 0.2, ease: 'easeOut' }}
     >
-      <div className="mb-3 flex items-start justify-between gap-3">
+      <div suppressHydrationWarning className="mb-3 flex items-start justify-between gap-3">
         <span className="font-serif text-[13px] text-neutral-500 transition-all duration-200 group-hover:tracking-[0.08em] group-hover:text-neutral-700 dark:group-hover:text-neutral-300">
           {project.number}
         </span>
-        <div className="flex items-center gap-2">
+        <div suppressHydrationWarning className="flex items-center gap-2">
           <span className={`${badgeClass} group-hover:opacity-90 group-hover:-translate-y-px`}>{badgeLabel}</span>
           {hasExpandedContent && (
             <span
               className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-black/10 text-neutral-500 dark:border-white/10"
               aria-label={open ? t.projects.collapse : t.projects.expand}
             >
-              <motion.span
+              <motion.span suppressHydrationWarning
                 animate={reduceMotion ? undefined : { rotate: open ? 180 : 0 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
               >
@@ -83,15 +84,15 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
         </div>
       </div>
 
-      <div className="mb-2 text-[15px] font-medium leading-snug">{project.name}</div>
-      <div className="mb-4 text-[13px] font-light leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <div suppressHydrationWarning className="mb-2 text-[15px] font-medium leading-snug">{project.name}</div>
+      <div suppressHydrationWarning className="mb-4 text-[13px] font-light leading-relaxed text-neutral-600 dark:text-neutral-400">
         {project.description}
       </div>
 
       {summaryItems.length > 0 && (
-        <div className="mb-4 grid gap-2 rounded-xl border border-black/8 bg-black/[0.018] p-3 dark:border-white/8 dark:bg-white/[0.03]">
+        <div suppressHydrationWarning className="mb-4 grid gap-2 rounded-xl border border-black/8 bg-black/[0.018] p-3 dark:border-white/8 dark:bg-white/[0.03]">
           {summaryItems.map((item) => (
-            <div key={item.label} className="grid gap-0.5 md:grid-cols-[72px_minmax(0,1fr)]">
+            <div suppressHydrationWarning key={item.label} className="grid gap-0.5 md:grid-cols-[72px_minmax(0,1fr)]">
               <span className="text-[10px] uppercase tracking-[0.12em] text-neutral-500">{item.label}</span>
               <span className="text-[12px] leading-relaxed text-neutral-700 dark:text-neutral-300">{item.value}</span>
             </div>
@@ -101,17 +102,17 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
 
       <AnimatePresence initial={false}>
         {open && detailItems.length > 0 && (
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={reduceMotion ? false : { height: 0, opacity: 0 }}
             animate={reduceMotion ? undefined : { height: 'auto', opacity: 1 }}
             exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.22, ease: 'easeInOut' }}
             style={{ overflow: 'hidden' }}
           >
-            <div className="mb-4 border-t border-black/8 pt-4 dark:border-white/8">
-              <div className="grid gap-3">
+            <div suppressHydrationWarning className="mb-4 border-t border-black/8 pt-4 dark:border-white/8">
+              <div suppressHydrationWarning className="grid gap-3">
                 {detailItems.map((item) => (
-                  <div key={item.label}>
+                  <div suppressHydrationWarning key={item.label}>
                     <p className="mb-1 text-[10px] uppercase tracking-[0.12em] text-neutral-500">{item.label}</p>
                     <p className="text-[13px] font-light italic leading-relaxed text-neutral-600 dark:text-neutral-400">
                       {item.value}
@@ -124,15 +125,15 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
         )}
       </AnimatePresence>
 
-      <div className="mt-auto pt-3 border-t border-black/8 dark:border-white/8">
-        <div className="flex flex-wrap gap-1 mb-3">
+      <div suppressHydrationWarning className="mt-auto pt-3 border-t border-black/8 dark:border-white/8">
+        <div suppressHydrationWarning className="flex flex-wrap gap-1 mb-3">
           {project.tech.map(tag => (
             <span key={tag} className="text-[10px] px-2 py-0.5 border border-black/15 dark:border-white/15 rounded-full text-neutral-500">
               {tag}
             </span>
           ))}
         </div>
-        <div className="flex items-center justify-between">
+        <div suppressHydrationWarning className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-[11px] text-neutral-500">
             <span className={`w-1.5 h-1.5 rounded-full ${statusColors[project.status]}`} />
             {statusLabel}
