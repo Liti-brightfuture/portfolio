@@ -29,7 +29,7 @@ export const translations = {
     },
     about: {
       label: 'About',
-      p1: "I'm an engineer at heart and a full-stack developer in practice. I study Robotics at Politehnica Bucharest and work as a Junior Developer at TechWise Electronics, writing C for industrial robots that need to move precisely and reliably. On the web side, I build full-stack products end to end with Python, C++, C#, and a modern stack like Next.js, React, and TypeScript.",
+      p1: "I'm an engineer at heart and a full-stack developer in practice. I study Applied Computer Science at Politehnica Bucharest and work as a Developer at TechWise Electronics, where I build an IoT soil monitoring system and, on the side, program industrial robots in C# and Python. On the web side, I build full-stack products end to end with Python, C++, C#, and a modern stack like Next.js, React, and TypeScript.",
       p2: "Outside the day job I've shipped seventeen SaaS products from zero to production: business automation, grooming salon booking, transport fleet tracking, prediction market bots, invoice extraction, and crypto payment tooling.",
       p3: "AI is just another tool in my stack. The real work is deciding what to build, structuring it right, and turning that into code that survives contact with real users.",
       note: "I obsess over software people actually keep using. Fast, stable, and built to earn trust every single day.",
@@ -122,7 +122,7 @@ export const translations = {
     },
     about: {
       label: 'Despre mine',
-      p1: 'Sunt inginer in miez si full stack developer in practica. Studiez Robotica la Politehnica Bucuresti si lucrez ca Junior Developer la TechWise Electronics, unde scriu C pentru roboti industriali care trebuie sa fie precisi si stabili. Pe partea de web construiesc produse full stack de la zero, cu Python, C++, C# si un stack modern precum Next.js, React si TypeScript.',
+      p1: 'Sunt inginer in miez si full stack developer in practica. Studiez Informatica Aplicata la Politehnica Bucuresti si lucrez ca Developer la TechWise Electronics, unde construiesc un sistem IoT de monitorizare a solului si, secundar, programez roboti industriali in C# si Python. Pe partea de web construiesc produse full stack de la zero, cu Python, C++, C# si un stack modern precum Next.js, React si TypeScript.',
       p2: 'In afara jobului am livrat saptesprezece produse SaaS de la zero pana in productie: automatizare business, rezervari salon grooming, urmarire flota transport, boti pentru piete de predictie, extractie facturi si plati in crypto.',
       p3: 'AI e doar o unealta in stack-ul meu. Munca reala inseamna sa stii ce construiesti, cum structurezi solutia si cum transformi asta in cod care rezista la utilizatori reali.',
       note: 'Ma obsedeaza software-ul la care oamenii revin. Rapid, stabil si construit sa castige incredere in fiecare zi.',
