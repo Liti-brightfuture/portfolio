@@ -122,7 +122,7 @@ export const translations = {
     },
     about: {
       label: 'Despre mine',
-      p1: 'Sunt inginer in miez si full stack developer in practica. Studiez Informatica Aplicata la Politehnica Bucuresti si lucrez ca Developer la TechWise Electronics, unde construiesc un sistem IoT de monitorizare a solului si, secundar, programez roboti industriali in C# si Python. Pe partea de web construiesc produse full stack de la zero, cu Python, C++, C# si un stack modern precum Next.js, React si TypeScript.',
+      p1: 'Sunt inginer la baza si full stack developer in practica. Studiez Informatica Aplicata la Politehnica Bucuresti si lucrez ca Developer la TechWise Electronics, unde construiesc un sistem IoT de monitorizare a solului si, secundar, programez roboti industriali in C# si Python. Pe partea de web construiesc produse full stack de la zero, cu Python, C++, C# si un stack modern precum Next.js, React si TypeScript.',
       p2: 'In afara jobului am livrat saptesprezece produse SaaS de la zero pana in productie: automatizare business, rezervari salon grooming, urmarire flota transport, boti pentru piete de predictie, extractie facturi si plati in crypto.',
       p3: 'AI e doar o unealta in stack-ul meu. Munca reala inseamna sa stii ce construiesti, cum structurezi solutia si cum transformi asta in cod care rezista la utilizatori reali.',
       note: 'Ma obsedeaza software-ul la care oamenii revin. Rapid, stabil si construit sa castige incredere in fiecare zi.',
