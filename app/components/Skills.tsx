@@ -10,7 +10,7 @@ const skillGroups = [
   },
   {
     cat: 'Backend & Data',
-    items: ['Node.js', 'Express', 'Supabase', 'Prisma', 'PostgreSQL', 'Neon Postgres', 'Upstash Redis', 'SQLite', 'Edge Functions', 'RLS'],
+    items: ['Node.js', 'Express', 'Supabase', 'Prisma', 'PostgreSQL', 'pgvector', 'Neon Postgres', 'Upstash Redis', 'SQLite', 'Edge Functions', 'RLS'],
   },
   {
     cat: 'Integrations & APIs',
@@ -18,15 +18,15 @@ const skillGroups = [
   },
   {
     cat: 'Tooling & DevOps',
-    items: ['GitHub', 'Vercel', 'Claude Code', 'ffmpeg', 'Expo', 'Zod', 'React Hook Form', 'Vitest'],
+    items: ['GitHub', 'Vercel', 'Claude Code', 'Langfuse', 'ffmpeg', 'Expo', 'Zod', 'React Hook Form', 'Vitest'],
   },
   {
     cat: 'AI & Prompt Engineering',
-    items: ['Prompt Engineering', 'Claude Code', 'GPT-4o', 'Whisper', 'AI Workflows', 'Context Management'],
+    items: ['RAG Pipelines', 'Hybrid Retrieval', 'Structured Outputs', 'Prompt Engineering', 'Claude API', 'DeepSeek API', 'GPT-4o', 'Whisper', 'AI Workflows', 'Context Management'],
   },
   {
     cat: 'Other',
-    items: ['C++', 'C# .NET', 'Python async', 'NetworkX', 'pandas', 'Industrial Robotics', 'i18n'],
+    items: ['C', 'C++', 'C# .NET', 'Python async', 'NetworkX', 'pandas', 'Embedded / IoT', 'LoRa', 'Industrial Robotics', 'i18n'],
   },
 ]
 

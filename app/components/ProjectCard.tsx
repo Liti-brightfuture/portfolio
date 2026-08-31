@@ -133,23 +133,36 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
             </span>
           ))}
         </div>
-        <div suppressHydrationWarning className="flex items-center justify-between">
-          <span className="flex items-center gap-1.5 text-[11px] text-neutral-500">
+        <div suppressHydrationWarning className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+          <span className="flex shrink-0 items-center gap-1.5 text-[11px] text-neutral-500">
             <span className={`w-1.5 h-1.5 rounded-full ${statusColors[project.status]}`} />
             {statusLabel}
           </span>
-          {project.link ? (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={e => e.stopPropagation()}
-              className="text-[11px] text-neutral-500 underline underline-offset-2 transition-colors hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:hover:text-neutral-200 dark:focus-visible:ring-white/20"
-            >
-              {t.projects.liveDemo} &rarr;
-            </a>
-          ) : (
-            <span />
+          {(project.link || project.github) && (
+            <div suppressHydrationWarning className="flex items-center gap-3">
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                  className="whitespace-nowrap text-[11px] text-neutral-500 underline underline-offset-2 transition-colors hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:hover:text-neutral-200 dark:focus-visible:ring-white/20"
+                >
+                  {t.projects.liveDemo} &rarr;
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={e => e.stopPropagation()}
+                  className="whitespace-nowrap text-[11px] text-neutral-500 underline underline-offset-2 transition-colors hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:hover:text-neutral-200 dark:focus-visible:ring-white/20"
+                >
+                  {t.projects.viewCode} &rarr;
+                </a>
+              )}
+            </div>
           )}
         </div>
       </div>

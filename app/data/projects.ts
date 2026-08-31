@@ -309,6 +309,23 @@ export const projects: Project[] = [
     link: 'https://chainmerchants-website.vercel.app',
     github: 'https://github.com/Liti-brightfuture/chainmerchants',
   },
+  {
+    id: 'monograph',
+    number: '18',
+    name: 'Monograph',
+    description: 'Question answering over FDA drug labels that cites the exact regulatory section it used, or refuses. Hybrid dense (pgvector) and full-text retrieval fused with Reciprocal Rank Fusion, listwise reranking, and citation checking that runs mechanically rather than on trust.',
+    why: 'I wanted to find out whether an answer from a language model could be made accountable to a source, so I built the citation check as code instead of asking the model to behave.',
+    role: 'Solo builder',
+    outcome: '36 FDA labels and 10,983 chunks, measured against a 50-question golden set built to include questions the corpus cannot answer.',
+    stackFit: 'One Postgres holds the documents, vectors, job queue, and audit log, so there is a single thing to back up; both embedding providers sit behind one 768-dimension interface.',
+    problem: 'An answer about a drug label is worthless without the section it came from, and a confident wrong answer is worse than no answer at all.',
+    owned: 'Ingest pipeline, hybrid retrieval and RRF fusion, listwise reranker, six named guardrails, hash-chained audit log, per-tenant row-level security, and the eval ladder.',
+    tradeoff: 'Skipped LangChain and LlamaIndex for roughly 3,500 lines of explicit TypeScript, so every retrieval step can be read and tested instead of configured.',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL + pgvector', 'DeepSeek', 'Gemini embeddings', 'Langfuse'],
+    badge: 'collab',
+    status: 'wip',
+    github: 'https://github.com/Liti-brightfuture/monograph',
+  },
 ]
 
 export const earlyProjects: EarlyProject[] = [

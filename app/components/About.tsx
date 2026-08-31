@@ -6,7 +6,7 @@ import { useLang } from '@/app/context/LangContext'
 
 const stats = [
   { num: 7, key: 'years' as const },
-  { num: 17, key: 'projects' as const },
+  { num: 18, key: 'projects' as const },
   { num: 2, key: 'ai' as const },
   { num: 3, key: 'languages' as const },
 ]
