@@ -22,17 +22,11 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
   const statusLabel = t.projects[project.status as 'done' | 'wip' | 'demo']
   const hasExpandedContent = Boolean(project.problem || project.owned || project.tradeoff || (project.why && !project.why.startsWith('[YOUR')))
 
+  const detailsId = `${project.id}-details`
+
   const toggleCard = () => {
     if (!hasExpandedContent) return
     setOpen(o => !o)
-  }
-
-  const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (!hasExpandedContent) return
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      toggleCard()
-    }
   }
 
   const summaryItems = [
@@ -52,12 +46,8 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
     <motion.article suppressHydrationWarning
       className={`group flex flex-col rounded-2xl border border-black/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900/40 ${
         hasExpandedContent ? 'cursor-pointer' : ''
-      } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:focus-visible:ring-white/20 ${className}`}
+      } ${className}`}
       onClick={toggleCard}
-      onKeyDown={onKeyDown}
-      tabIndex={hasExpandedContent ? 0 : -1}
-      role={hasExpandedContent ? 'button' : undefined}
-      aria-expanded={hasExpandedContent ? open : undefined}
       whileHover={reduceMotion ? undefined : { y: -2, boxShadow: '0 12px 28px rgba(15, 23, 42, 0.06)' }}
       animate={open && !reduceMotion ? { borderColor: 'rgba(24, 24, 19, 0.18)' } : undefined}
       transition={{ duration: 0.2, ease: 'easeOut' }}
@@ -69,9 +59,13 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
         <div suppressHydrationWarning className="flex items-center gap-2">
           <span className={`${badgeClass} group-hover:opacity-90 group-hover:-translate-y-px`}>{badgeLabel}</span>
           {hasExpandedContent && (
-            <span
-              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-black/10 text-neutral-500 dark:border-white/10"
+            <button
+              type="button"
+              onClick={e => { e.stopPropagation(); toggleCard() }}
+              aria-expanded={open}
+              aria-controls={detailsId}
               aria-label={open ? t.projects.collapse : t.projects.expand}
+              className="relative inline-flex h-7 w-7 items-center justify-center rounded-full border border-black/10 text-neutral-500 before:absolute before:-inset-2 before:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/15 dark:border-white/10 dark:focus-visible:ring-white/20"
             >
               <motion.span suppressHydrationWarning
                 animate={reduceMotion ? undefined : { rotate: open ? 180 : 0 }}
@@ -79,7 +73,7 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
               >
                 <ChevronDown size={15} strokeWidth={1.75} />
               </motion.span>
-            </span>
+            </button>
           )}
         </div>
       </div>
@@ -103,6 +97,7 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
       <AnimatePresence initial={false}>
         {open && detailItems.length > 0 && (
           <motion.div suppressHydrationWarning
+            id={detailsId}
             initial={reduceMotion ? false : { height: 0, opacity: 0 }}
             animate={reduceMotion ? undefined : { height: 'auto', opacity: 1 }}
             exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}

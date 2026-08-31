@@ -30,7 +30,7 @@ export const translations = {
     about: {
       label: 'About',
       p1: "I'm an engineer at heart and a full-stack developer in practice. I study Applied Computer Science at Politehnica Bucharest and work as a Software Engineer at TechWise Electronics, where I own the device side of an IoT soil monitoring product running in the field: firmware, power behavior, and the edge cases that only show up outdoors. Before that I programmed industrial robots in C++, C# and Python. On the web side, I build full-stack products end to end with a modern stack like Next.js, React, and TypeScript.",
-      p2: "Outside the day job I've built eighteen products from zero to production, thirteen of them live: business automation, transport fleet tracking, invoice extraction for accountants, crypto payment tooling, and a retrieval system that answers questions about FDA drug labels with the exact section it cited.",
+      p2: "Outside the day job I've built eighteen products, thirteen of them live in production: business automation, transport fleet tracking, invoice extraction for accountants, crypto payment tooling, and a retrieval system that answers questions about FDA drug labels with the exact section it cited.",
       p3: "AI is a force multiplier, not a shortcut. I direct it and I own the result. The real work is still deciding what to build, structuring it right, and turning that into code that survives contact with real users.",
       note: "I obsess over software people actually keep using. Fast, stable, and built to earn trust every single day.",
       years: 'years coding',
@@ -124,7 +124,7 @@ export const translations = {
     about: {
       label: 'Despre mine',
       p1: 'Sunt inginer la baza si full stack developer in practica. Studiez Informatica Aplicata la Politehnica Bucuresti si lucrez ca Software Engineer la TechWise Electronics, unde ma ocup de toata partea de device a unui produs IoT de monitorizare a solului aflat in teren: firmware, consum si cazurile limita care apar doar afara. Inainte am programat roboti industriali in C++, C# si Python. Pe partea de web construiesc produse full stack de la zero, cu un stack modern precum Next.js, React si TypeScript.',
-      p2: 'In afara jobului am construit optsprezece produse de la zero pana in productie, treisprezece dintre ele live: automatizare business, urmarire flota transport, extractie facturi pentru contabili, plati in crypto si un sistem de retrieval care raspunde la intrebari despre etichete de medicamente FDA citand exact sectiunea folosita.',
+      p2: 'In afara jobului am construit optsprezece produse, treisprezece dintre ele live in productie: automatizare business, urmarire flota transport, extractie facturi pentru contabili, plati in crypto si un sistem de retrieval care raspunde la intrebari despre etichete de medicamente FDA citand exact sectiunea folosita.',
       p3: 'AI-ul e un multiplicator, nu o scurtatura. Eu dau directia si tot eu raspund de rezultat. Munca reala ramane sa stii ce construiesti, cum structurezi solutia si cum transformi asta in cod care rezista la utilizatori reali.',
       note: 'Ma obsedeaza software-ul la care oamenii revin. Rapid, stabil si construit sa castige incredere in fiecare zi.',
       years: 'ani de programare',

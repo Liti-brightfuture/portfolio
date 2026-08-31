@@ -315,7 +315,7 @@ export const projects: Project[] = [
     name: 'Monograph',
     description: 'Question answering over FDA drug labels that cites the exact regulatory section it used, or refuses. Hybrid dense (pgvector) and full-text retrieval fused with Reciprocal Rank Fusion, listwise reranking, and citation checking that runs mechanically rather than on trust.',
     why: 'I wanted to find out whether an answer from a language model could be made accountable to a source, so I built the citation check as code instead of asking the model to behave.',
-    role: 'Solo builder',
+    role: 'Full-stack builder',
     outcome: '36 FDA labels and 10,983 chunks, measured against a 50-question golden set built to include questions the corpus cannot answer.',
     stackFit: 'One Postgres holds the documents, vectors, job queue, and audit log, so there is a single thing to back up; both embedding providers sit behind one 768-dimension interface.',
     problem: 'An answer about a drug label is worthless without the section it came from, and a confident wrong answer is worse than no answer at all.',
